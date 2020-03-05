@@ -4,8 +4,9 @@ from django.http import HttpResponse
 posts = [
     {
         'author': 'Mayur',
+        'title': 'sometitle',
         'content': 'some random text',
-        'created_at': 'just now',
+        'date_posted': 'just now',
 
     }
 ]
