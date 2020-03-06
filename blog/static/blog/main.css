@@ -1,6 +1,6 @@
 body {
-  background: #fafafa;
-  color: #333333;
+  background: #ffffff;
+  color: #333333  ;
   margin-top: 5rem;
 }
 
@@ -12,12 +12,8 @@ ul {
   margin: 0;
 }
 
-.bg-steel {
-  background-color: #5f788a;
-}
-
 .site-header .navbar-nav .nav-link {
-  color: #cbd5db;
+  color: #ffffff;
 }
 
 .site-header .navbar-nav .nav-link:hover {
@@ -83,9 +79,15 @@ a.article-title:hover {
   font-size: 2.5rem;
 }
 
-#login{
+#register{
   padding-right: 15px;
   padding-left: 15px;
+  margin-left: 5px;
   border: solid 2px #a7ff83;
   border-radius: 6px  ;
+}
+
+#site{
+  font-weight: bold;
+  font-size: 25px;
 }
