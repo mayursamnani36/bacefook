@@ -24,8 +24,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+                {% if user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+                        <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+                {% endif %}
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
@@ -55,14 +57,15 @@
         </div>
         <div class="col-md-4">
           <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
+            <h3>Message from Creator</h3>
+            <p class='text-muted'>
+                If You like this please give it a star :)<br/>
+                Check my other profiles as well :D
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
+                <a href="https://github.com/mayursamnani36" class="text-decoration-none"><li class="list-group-item list-group-item-light btn btn-outline-success">GitHub</li></a>
+                <a href="https://www.facebook.com/mayur.samnani" class="text-decoration-none"><li class="list-group-item list-group-item-light btn btn-outline-info">Facebook</li></a>
+                <a href="https://www.instagram.com/mayur_samnani/?hl=en" class="text-decoration-none"><li class="list-group-item list-group-item-light btn btn-outline-dark">Instagram</li></a>
+                </ul>
             </p>
           </div>
         </div>
