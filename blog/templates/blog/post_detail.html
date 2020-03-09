@@ -1,20 +1,24 @@
 {% extends "blog/base.html" %}
-{% block title %} Home {% endblock %}
+{% block title %} {{post.title}} {% endblock %}
 <body>
     {% block content %}
-        {% for post in posts %}
             <article class="media content-section">
                 <img src="{{ post.author.profile.image.url }}" class="rounded-circle article-img" alt="">
               <div class="media-body">
                 <div class="article-metadata">
                   <a class="mr-2" href="#">{{ post.author }}</a>
                   <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                    {% if post.author == user %}
+                        <div>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' post.id %}">Update</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' post.id %}">Delete</a>
+                        </div>
+                    {% endif %}
                 </div>
-                <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                <h2 class="article-title">{{ post.title }}</h2>
                 <p class="article-content">{{ post.content }}</p>
               </div>
             </article>
-        {% endfor %}
     {% endblock content %}
 </body>
 </html>
