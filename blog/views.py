@@ -1,6 +1,7 @@
 from abc import ABC
 
-from django.shortcuts import render
+from django.contrib.auth.models import User
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import (
     ListView,
     DetailView,
@@ -25,6 +26,17 @@ class PostListView(LoginRequiredMixin, ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 4
+
+
+class UserPostListView(LoginRequiredMixin, ListView):
+    model = Post
+    template_name = 'blog/user_post.html'
+    context_object_name = 'posts'
+    paginate_by = 4
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-date_posted')
 
 
 class PostDetailView(LoginRequiredMixin, DetailView):
