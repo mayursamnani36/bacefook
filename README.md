@@ -5,7 +5,7 @@ Sample images of the project are available in sample_images folder.
 
 ## Clone the project
 Use this command to clone the project.<br><br>
-`https://github.com/mayursamnani36/bacefook.git`
+`git clone https://github.com/mayursamnani36/bacefook.git`
 
 ## Setting up virtual environment
 To setup virtual enviroment you need to follow steps based on your OS. Also make sure you are in the project directory.
