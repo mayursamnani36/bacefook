@@ -1,6 +1,6 @@
 # Bacefook
 Facebook clone made using python and Django. <br>
-Hello there, if you want to clone my project here are the steps to clone it on your local machine.
+Hello there, if you want to clone my project here are the steps to clone it on your local machine. Sample images of the project are available in sample_images folder
 
 ## Clone the project
 Use this command to clone the project.<br><br>
